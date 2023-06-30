@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/fatih/structs"
 	"github.com/spf13/viper"
 )
 
@@ -35,6 +36,10 @@ func Request(method string, url string, body io.Reader, headers *http.Header) (*
 		return nil, err
 	}
 	return response, nil
+}
+
+func StructToMap(s interface{}) (map[string]interface{}, error) {
+	return structs.Map(s), nil
 }
 
 func HandlePanic() {
