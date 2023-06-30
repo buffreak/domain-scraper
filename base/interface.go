@@ -14,7 +14,7 @@ type AuthService interface {
 	Signup(email, password string) error
 	Login(email, password string) error
 	Logout() error
-	GetToken(refreshToken string) error
+	GetToken(refreshToken ...string) error
 }
 
 type MailService interface {
