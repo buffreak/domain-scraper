@@ -12,6 +12,6 @@ func TestGetDomainsDynadot(t *testing.T) {
 	domains, err := dn.GetDomains("0")
 	assert.Nil(t, err)
 	t.Logf("%+v", domains)
-	convert, _ := dn.StructToMap(dn)
+	convert, _ := base.StructToMap(dn)
 	t.Logf("%+v", convert)
 }

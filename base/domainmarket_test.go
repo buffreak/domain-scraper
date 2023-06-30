@@ -12,6 +12,6 @@ func TestGetDomainsDomainMarket(t *testing.T) {
 	domains, err := dm.GetDomains("ao", "1")
 	assert.Nil(t, err)
 	t.Logf("%+v", domains)
-	convert, _ := dm.StructToMap(dm)
+	convert, _ := base.StructToMap(dm)
 	t.Logf("%+v", convert)
 }

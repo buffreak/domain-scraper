@@ -12,6 +12,6 @@ func TestGetDomainsNameCheap(t *testing.T) {
 	domains, err := nc.GetDomains("1")
 	assert.Nil(t, err)
 	t.Logf("%+v", domains)
-	convert, _ := nc.StructToMap(nc)
+	convert, _ := base.StructToMap(nc)
 	t.Logf("%+v", convert)
 }

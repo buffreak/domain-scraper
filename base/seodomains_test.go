@@ -12,6 +12,6 @@ func TestGetDomainsSeoDomains(t *testing.T) {
 	domains, err := sd.GetDomains("1")
 	assert.Nil(t, err)
 	t.Logf("%+v", domains)
-	convert, _ := sd.StructToMap(sd)
+	convert, _ := base.StructToMap(sd)
 	t.Logf("%+v", convert)
 }

@@ -12,6 +12,6 @@ func TestGetDomainsSedo(t *testing.T) {
 	domains, err := sedo.GetDomains("apa", "1")
 	assert.Nil(t, err)
 	t.Logf("%+v", domains)
-	convert, _ := sedo.StructToMap(sedo)
+	convert, _ := base.StructToMap(sedo)
 	t.Logf("%+v", convert)
 }

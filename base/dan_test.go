@@ -12,6 +12,6 @@ func TestGetDomainsDan(t *testing.T) {
 	domains, err := dan.GetDomains("al", "0")
 	assert.Nil(t, err)
 	t.Logf("%+v", domains)
-	convert, _ := dan.StructToMap(dan)
+	convert, _ := base.StructToMap(dan)
 	t.Logf("%+v", convert)
 }
