@@ -5,8 +5,6 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/fatih/structs"
 )
 
 type Dan struct {
@@ -49,8 +47,4 @@ func (dan *Dan) GetDomains(opts ...string) (domains []string, err error) {
 		domains = append(domains, domain.(map[string]interface{})["name"].(string))
 	}
 	return domains, nil
-}
-
-func (dan *Dan) StructToMap(s interface{}) (map[string]interface{}, error) {
-	return structs.Map(s), nil
 }

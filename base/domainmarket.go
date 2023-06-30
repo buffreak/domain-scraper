@@ -6,7 +6,6 @@ import (
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/fatih/structs"
 )
 
 type DomainMarket struct {
@@ -49,8 +48,4 @@ func (dm *DomainMarket) GetDomains(opts ...string) (domains []string, err error)
 		domains = append(domains, strings.ToLower(domain))
 	})
 	return domains, nil
-}
-
-func (dm *DomainMarket) StructToMap(s interface{}) (map[string]interface{}, error) {
-	return structs.Map(s), nil
 }

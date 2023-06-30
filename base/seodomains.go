@@ -4,7 +4,6 @@ import (
 	"net/http"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/fatih/structs"
 )
 
 type SeoDomains struct {
@@ -46,8 +45,4 @@ func (sd *SeoDomains) GetDomains(opts ...string) (domains []string, err error) {
 		domains = append(domains, s.Text())
 	})
 	return domains, nil
-}
-
-func (sd *SeoDomains) StructToMap(s interface{}) (map[string]interface{}, error) {
-	return structs.Map(s), nil
 }

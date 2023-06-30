@@ -4,8 +4,6 @@ import (
 	"encoding/json"
 	"net/http"
 	"strings"
-
-	"github.com/fatih/structs"
 )
 
 type NameCheap struct {
@@ -65,8 +63,4 @@ func (nc *NameCheap) GetDomains(opts ...string) (domains []string, err error) {
 		domains = append(domains, domain.(map[string]interface{})["product"].(map[string]interface{})["name"].(string))
 	}
 	return domains, nil
-}
-
-func (nc *NameCheap) StructToMap(s interface{}) (map[string]interface{}, error) {
-	return structs.Map(s), nil
 }

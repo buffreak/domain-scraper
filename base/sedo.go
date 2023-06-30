@@ -5,8 +5,6 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/fatih/structs"
 )
 
 type Sedo struct {
@@ -51,8 +49,4 @@ func (sedo *Sedo) GetDomains(opts ...string) (domains []string, err error) {
 		domains = append(domains, domain.(map[string]interface{})["2"].(string))
 	}
 	return domains, nil
-}
-
-func (sedo *Sedo) StructToMap(s interface{}) (map[string]interface{}, error) {
-	return structs.Map(s), nil
 }

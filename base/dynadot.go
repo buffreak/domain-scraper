@@ -4,7 +4,6 @@ import (
 	"net/http"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/fatih/structs"
 )
 
 type Dynadot struct {
@@ -46,8 +45,4 @@ func (dn *Dynadot) GetDomains(opts ...string) (domains []string, err error) {
 		domains = append(domains, domain)
 	})
 	return domains, nil
-}
-
-func (dn *Dynadot) StructToMap(s interface{}) (map[string]interface{}, error) {
-	return structs.Map(s), nil
 }

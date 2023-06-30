@@ -5,8 +5,6 @@ import (
 	"net/http"
 	"regexp"
 	"strings"
-
-	"github.com/fatih/structs"
 )
 
 type GoDaddy struct {
@@ -56,8 +54,4 @@ func (gd *GoDaddy) GetDomains(opts ...string) (domains []string, err error) {
 	}
 	gd.Baid = regexp.MustCompile(`s_baid1=(.*?);`).FindStringSubmatch(string(body))[1]
 	return domains, nil
-}
-
-func (gd *GoDaddy) StructToMap(s interface{}) (map[string]interface{}, error) {
-	return structs.Map(s), nil
 }
